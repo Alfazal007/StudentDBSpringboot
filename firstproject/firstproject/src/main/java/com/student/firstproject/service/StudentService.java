@@ -1,20 +1,23 @@
 package com.student.firstproject.service;
 
 
+import com.student.firstproject.dto.StudentRequest;
 import com.student.firstproject.entity.Student;
+import com.student.firstproject.exception.StudentListEmptyException;
+import com.student.firstproject.exception.StudentNotFoundException;
 
 import java.util.List;
 
 public interface StudentService {
-    Student addNewStudent(Student student);
+    Student addNewStudent(StudentRequest student);
 
-    List<Student> getAllStudents();
+    List<Student> getAllStudents() throws StudentListEmptyException;
 
-    Student getStudentThroughId(Long id);
+    Student getStudentThroughId(Long id) throws StudentNotFoundException;
 
-    Student getByName(String name);
+    Student getByName(String name) throws StudentNotFoundException;
 
-    void deleteThroughId(Long id);
+    String deleteThroughId(Long id) throws StudentNotFoundException;
 
-    Student updateStudentInfo(Student student, Long id);
+    Student updateStudentInfo(Student student, Long id) throws StudentNotFoundException;
 }

@@ -8,6 +8,6 @@ public class SpringProjectOnStudentDbmsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringProjectOnStudentDbmsApplication.class, args);
-		System.out.println("Shanks is here!!");
+		System.out.println("Server started at port 8082");
 	}
 }
